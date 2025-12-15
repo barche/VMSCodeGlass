@@ -16,9 +16,9 @@ function tg(N, tsteps)
   tF = dt*tsteps
   vortex_diameter = 1.0
   Re = 1600
-  D = 3
+  D = 3 #problem in 3D dimensions
 
-  backend = with_mpi
+  backend = with_mpi #with_debug -> you can run in the repl, see PartitionedArrays for more details
 
   rank_partition = (2,2,2) # the product of this tuple must be equal to the number of MPI processes
 
@@ -26,7 +26,7 @@ function tg(N, tsteps)
   sol_options *= " -options_monitor -memory_view -log_view_memory -malloc_view"
 
 
-  sprob = StabilizedProblem(VMS(2))
+  sprob = StabilizedProblem(VMS(2)) #2nd order elemetns
   timep = TimeParameters(t0=t0, dt=dt, tF=tF)
 
   physicalp = PhysicalParameters(Re=Re, c=vortex_diameter)
@@ -58,4 +58,4 @@ function tg(N, tsteps)
   rank == 0 && println("finished run for N = $N")
 end
 
-tg(8,2)
+tg(8,2) #8-> number of elements on each side, 2->number of time-steps
