@@ -4,4 +4,4 @@ PartitionedArrays = "5a9dfac6-5c52-46f7-8278-5e2210713be9"
 SegregatedVMSSolver = "90220dfc-fac3-4908-b895-51c1a1f4cb85"
 
 [sources]
-SegregatedVMSSolver = {rev = "Update-deps", url = "https://github.com/barche/SegregatedVMSSolver.jl.git"}
+SegregatedVMSSolver = {rev = "Update-deps", url = "https://github.com/carlodev/SegregatedVMSSolver.jl.git"}
