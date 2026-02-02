@@ -23,7 +23,7 @@ function tg(N, tsteps)
   rank_partition = (2,2,2) # the product of this tuple must be equal to the number of MPI processes
 
   sol_options= petsc_options(; vel_ksp="gmres", vel_pc="bjacobi", pres_ksp = "cg", pres_pc = "asm")
-  sol_options *= " -options_monitor -memory_view -log_view_memory -malloc_view"
+  sol_options *= " -options_monitor -log_view"
 
 
   sprob = StabilizedProblem(VMS(2)) #2nd order elemetns
